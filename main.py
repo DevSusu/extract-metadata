@@ -14,10 +14,21 @@ if __name__ == "__main__":
 
     ex = Excel({ 'column_names' : ['filename'] + meta.DEFAULT_TAGS })
 
+    print_str = "var image_data=\""
+
     for fname in files:
-        print(fname)
         meta_infos = meta.extract_exif(f=open('images/'+fname,'rb'))
         meta_infos['filename'] = fname
-        ex.add_row(meta_infos)
+        tmp_row = ex.add_row(meta_infos)
 
-    ex.save(filename="images_metadata_{}.xlsx".format(datetime.datetime.now().strftime('%y%m%d')))
+        print_str += "{},{},{},{}\\n".format(
+            tmp_row[0],
+            tmp_row[1],
+            tmp_row[2],
+            tmp_row[3]
+        )
+
+    with open("data/data.js",'w') as f:
+        f.write(print_str+"\";")
+
+    ex.save(filename="images_metadata_{}.csv".format(datetime.datetime.now().strftime('%y%m%d')))

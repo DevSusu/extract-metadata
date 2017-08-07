@@ -1,7 +1,6 @@
 from openpyxl import Workbook
 
 class Excel(object):
-    """docstring for Excel."""
     def __init__(self, arg):
         super(Excel, self).__init__()
 
@@ -26,10 +25,10 @@ class Excel(object):
                     row.append("")
 
             self.ws.append(row)
-            return True
+            return row
 
         else:
             return None
 
-    def save(self, filename='metadata.xlsx'):
+    def save(self, filename='metadata.xlsx', encoding='utf-8'):
         self.wb.save(filename)
