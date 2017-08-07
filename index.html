@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="stylesheet" href="./static/normalize.css">
+    <link rel="stylesheet" href="./static/skeleton.css">
+    <link rel="stylesheet" href="./static/index.css">
+    <link rel="stylesheet" href="./static/datepicker.css">
+    <script src="./data/data.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiLDLUIyyP2zXbNrWfFMr_LuPyK7mkuCo&language=ko"></script>
+    <!-- <script type="text/javascript" src="./static/jquery.googlemap.js"></script> -->
+    <script src="./static/index.js"></script>
+    <script src="./static/datepicker.js"></script>
+    <script src="./static/datepicker.ko-KR.js"></script>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="row">
+          <h1>시간 / 위치 데이터 시각화</h1>
+        </div>
+        <div class="row">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <input type="text" id="start-date" data-toggle="datepicker">
+          <span>부터</span>
+          <input type="text" id="end-date" data-toggle="datepicker">
+          <span>까지</span>
+          <button id="filter" class="button button-primary">적용</button>
+        </div>
+        <div class="row">
+          <table>
+            <thead>
+              <th>파일명</th>
+              <th>시간</th>
+              <th>위도</th>
+              <th>경도</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
