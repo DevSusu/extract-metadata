@@ -1,3 +1,6 @@
+#!C:\Users\OCM\workspace\python\image_metadata/Scripts python
+# -*- coding: utf-8 -*-
+
 from openpyxl import Workbook
 
 class Excel(object):

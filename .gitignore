@@ -1,5 +1,7 @@
 # results
 *.xlsx
+*.csv
+data/*
 
 # files
 images/*
